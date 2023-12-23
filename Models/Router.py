@@ -6,6 +6,6 @@ from shapely.wkt import loads
 
 class Router(object):
     def __init__(self, dataString):
-        dataList = dataString.split(',')
+        dataList = dataString.split(';')
         self.guid = dataList[0]
         self.geom = dataList[1]
