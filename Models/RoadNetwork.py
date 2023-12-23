@@ -12,3 +12,10 @@ class RoadNetwork(object):
             lines = s.readlines()
             for line in range(1, len(lines)):
                 self.roads.append(Road(lines[line]))
+                
+    def getDF(self):
+        self.dd = {"geom" : []}
+        for a in self.roads:
+            self.dd['geom'].append(a.geom)
+        df = pd.DataFrame(self.dd)
+        return df
