@@ -3,7 +3,7 @@ import pandas as pd
 from shapely.geometry import Point, LineString
 import matplotlib.pyplot as plt
 from shapely.wkt import loads
-import Road
+from Models.Road import Road
 
 class RoadNetwork(object):
     def __init__(self, pas):
