@@ -3,6 +3,7 @@ import pandas as pd
 from shapely.geometry import Point, LineString
 import matplotlib.pyplot as plt
 from shapely.wkt import loads
+import Router
 
 class RouterArray(object):
     def __init__(self, pas):
