@@ -11,4 +11,4 @@ class RouterArray(object):
         with open(pas, 'r') as s:
             lines = s.readlines()
             for line in range(1,len(lines)):
-                self.routers.append(lines[line])
+                self.routers.append(Router(lines[line]))
