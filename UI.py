@@ -1,8 +1,6 @@
 import customtkinter
 import matplotlib.pyplot as plt
 import networkx as nx
-import numpy as np
-import os
 from PIL import Image
 import datetime
 
