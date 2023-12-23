@@ -10,7 +10,7 @@ def main():
 
 
     # Загрузка данных из Excel-файлов
-    Roads = RoadNetwork('input/road_network.csv')
+    Roads = RoadNetwork('input/road_network_cut.csv')
     Routers = RouterArray('input/wifi_routers.csv')
 
     # Преобразование данных в GeoDataFrame
@@ -24,10 +24,10 @@ def main():
     fig, ax = plt.subplots(figsize=(10, 10))
 
     # Визуализация первой таблицы
-    gdf1.plot(ax=ax, color='blue', linewidth=2, label='Table 1')
+    gdf1.plot(ax=ax, color='gray', linewidth=2, label='Table 1', zorder=0)
 
     # Визуализация второй таблицы
-    gdf2.plot(ax=ax, color='red', markersize=50, label='Table 2', marker='o')
+    gdf2.plot(ax=ax, color='#FB62F6', markersize=50, label='Table 2', marker='o', zorder=1)
 
     # Отображение карты
     plt.title('Географическая визуализация данных')

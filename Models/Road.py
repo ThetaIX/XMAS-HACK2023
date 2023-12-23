@@ -7,7 +7,7 @@ from shapely.wkt import loads
 class Road(object):
     def __init__(self, dataString):
         dataList = dataString.split(';')
-        self.geom = dataList[1]
-        self.fromVertex = dataList[2]
-        self.toVertex = dataList[3]
-        self.weights = dataList[4]
+        self.geom = dataList[0]
+        self.fromVertex = dataList[1]
+        self.toVertex = dataList[2]
+        self.weights = float(dataList[3])

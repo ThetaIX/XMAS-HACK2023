@@ -5,6 +5,7 @@ def cut():
     """
     docstring
     """
+    eps = 0.004
     roads = open('input/road_network.csv', 'r').read().splitlines()
     routers = open('input/wifi_routers.csv', 'r').read().splitlines()
     roads_cut = open('input/road_network_cut.csv', 'w+')
@@ -22,15 +23,17 @@ def cut():
         if mxy < y: mxy = y  # noqa: E701
         if mny > y: mny = y  # noqa: E701
     
-    mxx += 0.0027
-    mnx -= 0.0027
-    mxy += 0.0027
-    mny -= 0.0027
+    mxx += eps
+    mnx -= eps
+    mxy += eps
+    mny -= eps
     print(f"X: ({mxx}, {mnx})   Y: ({mxy}, {mny})")
     for road in roads[1:]:
         coo = road.split(';')[0][13:-2].split(',')[0].split()
         if mxx < float(coo[0]) or mnx > float(coo[0]) or mxy < float(coo[1]) or mny > float(coo[1]):
             continue
-        roads_cut.write(road + '\n')
+        roads = road.split(';')
+        s = f'{roads[0][1:-1]};{roads[1][1:-1]};{roads[2][1:-1]};{roads[3][1:-1]};{roads[4]}\n'
+        roads_cut.write(s)
 
 cut()
